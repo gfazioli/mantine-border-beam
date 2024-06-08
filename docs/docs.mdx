@@ -1,0 +1,38 @@
+import { InstallScript } from './components/InstallScript/InstallScript';
+import * as demos from './demos';
+
+## Installation
+
+<InstallScript packages="@gfazioli/mantine-border-beam" />
+
+After installation import package styles at the root of your application:
+
+```tsx
+import '@gfazioli/mantine-border-beam/styles.css';
+```
+
+## Usage
+
+The `Reflection` component simply wraps the content to be reflected.
+
+<Demo data={demos.configurator} />
+
+> **Reflection Blur**: The `Reflection` component has a `reflectionBlur` prop that can be used to add a blur effect to the reflection. The value is a number that represents the amount of blur in pixels. The default value is `0`. You will probably notice that in the image above, as the blur effect on the reflection increases, the edges of the image will be cut off. To avoid this problem, you can adjust the blur effect with low values or apply padding to the component/image to be reflected.
+
+## The Image tag
+
+The `img` tag requires to be in `display: block` in order to avoid padding below it. For this reason, a `style` has been added to force the behavior.
+
+<Demo data={demos.simpleImage} />
+
+## Components
+
+You may use the `Reflection` component to reflect other components.
+
+<Demo data={demos.component} />
+
+## Complex components
+
+For complex components, you may need to disable certain components to prevent the mirrored version from functioning as a copy. In this example, we used the prop `disableChildren` for the right component. Mouse click is always disabled via CSS, but moving with the TAB key will focus on the mirrored component.
+
+<Demo data={demos.complexComponent} />
